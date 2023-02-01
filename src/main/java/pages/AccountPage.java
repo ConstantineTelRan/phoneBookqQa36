@@ -10,14 +10,11 @@ public class AccountPage extends PageBase {
         super(driver);
     }
 
-    @FindBy(xpath = "/html/body/app-root/app-home-page/div/app-user-details-pgae/div/div[2]/div/app-account-password/div[2]/form/div[1]/input")
+    @FindBy(xpath = "//input[@name='passwordInput']")
     WebElement passwordField;
 
-    @FindBy(xpath = "/html/body/app-root/app-home-page/div/app-user-details-pgae/div/div[2]/div/app-account-password/div[2]/form/button")
+    @FindBy(xpath = "//button[@class='btn btn-info my-4 btn-block']")
     WebElement acceptButton;
-
-    @FindBy(xpath = "/html/body/app-root/app-home-page/div/app-user-details-pgae/div/div[2]/div/app-account-password/div[2]/h5")
-    WebElement changePasswordString;
 
     public void enterPassword(String password) {
         type(passwordField, password);

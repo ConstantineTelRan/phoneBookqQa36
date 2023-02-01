@@ -16,25 +16,25 @@ public class ContactsPage extends PageBase{
     @FindBy(xpath = "//div[@class='collapse navbar-collapse']//div//button[2]")
     WebElement logOutButton;
 
-    @FindBy(xpath = "//a[contains(text(),'Contacts')]")
+    @FindBy(xpath = "//li//a[@href='/']")
     WebElement contacts;
 
     @FindBy(xpath = "//select[@id='langSelect']")
     WebElement selectLang;
 
-    @FindBy(xpath = "/html/body/app-root/app-home-page/app-header/nav/div/ul/li[2]/a")
+    @FindBy(xpath = "//a[@href='/contacts']")
     public WebElement addNewContactDialogOpenButton;
 
     @FindBy(xpath = "//*[@id=\"add-contact-modal\"]/a")
     public WebElement addNewContactDialogCloseButton;
 
-    @FindBy(xpath = "/html/body/ngb-modal-window/div/div/app-modal-content/div[1]/h4")
+    @FindBy(xpath = "//h4[@class='modal-title']")
     public List<WebElement> AddContactTextinDialog;
 
     @FindBy(className = "list-group-item.list-group-item-action")
     public List<WebElement> contactCards;
 
-    @FindBy(xpath = "/html/body/app-root/app-home-page/app-header/nav/div/div[2]/button[1]")
+    @FindBy(xpath = "//button[@routerlink='/account']")
     WebElement accountButton;
 
 
