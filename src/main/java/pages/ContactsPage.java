@@ -37,6 +37,12 @@ public class ContactsPage extends PageBase{
     @FindBy(xpath = "//button[@routerlink='/account']")
     WebElement accountButton;
 
+    @FindBy(xpath = "//input[@id='input-search-contact']")
+    WebElement searchField;
+
+    @FindBy(xpath = "//div[@class='d-flex justify-content-between']")
+    WebElement firstSearchResult;
+
 
 //    @FindBy(xpath = "//option[contains(text(),'English')]")
 //    WebElement engLang;
@@ -110,5 +116,16 @@ public class ContactsPage extends PageBase{
     public AccountPage clickOnContact(WebElement element) {
         element.click();
         return new AccountPage(driver);
+    }
+
+    public void clickToContactMenu() {
+        contacts.click();
+    }
+
+    public String getSearchContact(String fullName) {
+        searchField.sendKeys(fullName);
+        return firstSearchResult.getText();
+
+
     }
 }

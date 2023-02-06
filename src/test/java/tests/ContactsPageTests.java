@@ -57,6 +57,9 @@ public class ContactsPageTests extends TestBase {
      //       Assert.assertTrue(listContactsSize);
         System.out.println("Length of the list " +listContactsSize);
 
+        String a = list.get(listContactsSize-1).getText();
+        System.out.println(a);
+
         Assert.assertTrue(list.get(listContactsSize-1).getText().contains(name));
         Assert.assertTrue(list.get(listContactsSize-1).getText().contains(sname));
     }
@@ -87,6 +90,5 @@ public class ContactsPageTests extends TestBase {
         Assert.assertEquals((ap.firstName.getText()
                 + " "
                 + ap.lastName.getText()), buttonText);
-
     }
 }

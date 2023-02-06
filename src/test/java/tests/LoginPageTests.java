@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ContactsPage;
@@ -62,6 +63,20 @@ public class LoginPageTests extends TestBase{
         logger.info("3. Check if Login button is active\n" +
                 "*Expected result:* Login button is enabled");
         Assert.assertTrue(myLoginPage.loginButton.isEnabled());
+    }
+
+    @Test
+    public void loginNegativeTestWithFaker(){
+        logger.info("Starting negative login test");
+        Faker faker = new Faker();
+        String email = faker.internet().emailAddress();
+        String password = faker.internet().password();
+        LoginPage myLoginPage = new LoginPage(driver);
+        myLoginPage.loginNegative(email, password);
+        sleep();
+        Assert.assertEquals(myLoginPage.registerLink.getText(), "Register new Account");
+        Assert.assertEquals(myLoginPage.errorMsg.getText(), "Please check your activation or Login + Password combination" );
+        logger.info("Finished negative login test");
     }
 
 
